@@ -1,6 +1,8 @@
 package com.igreendata.rest.webservices.restfulwebservices.user;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 import net.minidev.json.annotate.JsonIgnore;
 @Entity
 public class Post {
@@ -26,6 +28,12 @@ public class Post {
         this.description = description;
     }
 
+    public Post(Integer id, String description, User user) {
+        this.id = id;
+        this.description = description;
+        this.user = user;
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -36,5 +44,13 @@ public class Post {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
