@@ -19,6 +19,8 @@ public class Post {
         return id;
     }
 
+    public Post() {
+    }
     public Post(Integer id, String description) {
         this.id = id;
         this.description = description;
